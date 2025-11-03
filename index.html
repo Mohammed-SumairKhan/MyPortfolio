@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en    .container { max-width: 1200px; margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mohammed Sumair Khan — QA Engineer & Java Developer</title>
+  <meta name="description" content="Portfolio of Mohammed Sumair Khan — QA Automation, Java Development, Selenium, TestNG, Jenkins, MySQL">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --muted: #64748b;
+      --accent: #38bdf8;
+      --text: #0f172a;
+      --radius: 16px;
+      --shadow: 0 6px 30px rgba(2,6,23,0.06);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding-top: 1rem; }
+
+    header {
+      position: sticky;
+      top: 0rem;
+      background: var(--bg);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0.5rem 2rem;
+      box-shadow: var(--shadow);
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+    nav a {
+      color: var(--text);
+      margin-left: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+      padding: 0 2rem;
+      margin-top: 2rem;
+    }
+
+    .intro h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .intro p { color: var(--muted); margin-bottom: 1.5rem; }
+
+    .cta a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      margin-right: 0.75rem;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: none;
+    }
+    .cta a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #67e8f9; color: #0f172a; }
+
+    .btn-outline { border: 2px solid var(--accent); color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+
+    .profile-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      text-align: center;
+      width: 420px;
+      min-width: 320px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .avatar {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #3b82f6);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; color: #fff; font-weight: 700;
+      margin: 0 auto 1rem auto;
+    }
+
+    section { margin-top: 4rem; }
+
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+
+    .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem; margin-top: 1rem; }
+
+    /* NEW Skills cards grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .skill-card {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: linear-gradient(180deg, #ffffff, #fbfdff);
+      border-radius: 12px; padding: 14px; box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+      border: 1px solid rgba(14,165,233,0.06);
+    }
+    .skill-card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(16,24,40,0.08); }
+
+    .skill-icon { width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(56,189,248,0.06)); display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent); }
+    .skill-body h4 { margin:0 0 6px 0; font-size:1rem }
+    .skill-body p { margin:0; color:var(--muted); font-size:0.95rem; line-height:1.4 }
+
+    .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .timeline-item {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: var(--radius);
+      position: relative;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-item .dropdown-icon {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item.active .dropdown-icon {
+      transform: rotate(180deg);
+    }
+
+    .timeline-details {
+      display: none;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .timeline-details.active {
+      display: block;
+    }
+
+    .timeline-details ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: var(--muted);
+    }
+
+    .timeline-details li {
+      margin-bottom: 0.5rem;
+    }
+
+    .certification-card {
+      background: #f1f5f9;
+      padding: 1.2rem;
+      border-radius: var(--radius);
+      position: relative;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.1);
+      background: var(--card);
+    }
+
+    .certification-card .icon {
+      color: var(--accent);
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .certification-card:hover .icon {
+      transform: translateX(5px);
+    }
+
+    .certification-info {
+      flex-grow: 1;
+    }
+
+    .certification-card a {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-card {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      position: relative;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.1);
+      background: var(--card);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .project-header h3 {
+      margin: 0;
+    }
+
+    .project-link {
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project-link:hover {
+      transform: translateX(5px);
+    }
+
+    .project-details {
+      margin-top: 1rem;
+    }
+
+    .project-details ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .project-details li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer { text-align: center; color: var(--muted); padding: 2rem 0; margin-top: 4rem; border-top: 1px solid rgba(0,0,0,0.06); }
+
+    .social-icons a { color: var(--accent); font-size: 1.5rem; margin: 0 10px; transition: transform 0.3s, color 0.3s; }
+    .social-icons a:hover { transform: scale(1.18); color: #0f172a; }
+
+    @media (max-width: 900px) { .skills-grid { grid-template-columns: 1fr; } .hero { grid-template-columns: 1fr; text-align: center; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Mohammed Sumair Khan</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="intro">
+        <h1>QA Engineer & Java Developer</h1>
+        <p>Hands-on experience in Java, Selenium WebDriver, TestNG, Cucumber, Maven, MySQL, HTML, CSS, JavaScript, Git, and Jenkins. Skilled in automation testing, backend validation, and building scalable frameworks for quality software delivery.</p>
+        <div class="cta">
+          <a href="resume.pdf" class="btn-outline"  download="Mohammed_Sumair_Khan_Resume.pdf" >Download Resume</a>
+          <a href="#contact" class="btn-outline">Contact</a>
+        </div>
+      </div>
+      <!-- Profile section: big circle and name in one line below -->
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:2rem;">
+        <div class="avatar" style="width:240px;height:240px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#38bdf8,#3b82f6);border-radius:50%;box-shadow:0 12px 40px rgba(56,189,248,0.14);overflow:hidden;">
+          <img src="profile.jpg" alt="Profile Picture" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
+        </div>
+        <div style="margin-top:1rem;font-family:'Poppins',sans-serif;font-size:1.15rem;font-style:italic;font-weight:700;letter-spacing:0.5px;color:#222;text-align:center;">
+          Mohammed Sumair Khan
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:2rem;">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>I'm passionate about ensuring software quality through automation and efficient test design. Experienced in Java-based frameworks and Selenium for both front-end and backend validations. I thrive on problem-solving and continuous learning to improve system reliability and performance.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+          <div class="skill-body">
+            <h4>Automation Tools & Frameworks</h4>
+            <p>Selenium WebDriver, TestNG, Cucumber, ExtentReports, Maven, JSON, XML, Appium, JMeter</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-server"></i></div>
+          <div class="skill-body">
+            <h4>CI/CD & Build Tools</h4>
+            <p>Jenkins, CI/CD Pipelines</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-vial"></i></div>
+          <div class="skill-body">
+            <h4>Testing Skills</h4>
+            <p>Manual Testing, Automation Testing, Functional Testing, Regression Testing, Data-Driven Testing, Bug Reporting, Test Planning, Load Testing, Performance Testing, Stress Testing, Mobile App Testing</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <div class="skill-body">
+            <h4>Programming & Database</h4>
+            <p>Core Java, J2EE, JDBC, MySQL</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <div class="skill-body">
+            <h4>Web Technologies</h4>
+            <p>HTML, CSS, JavaScript (DOM)</p>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+          <div class="skill-body">
+            <h4>Version Control</h4>
+            <p>Git</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item" onclick="toggleDetails(this)">
+          <h3>Manasio Private Limited — SDET Training</h3>
+          <p><small>Jun '25 — Present • Bengaluru, India</small></p>
+          <p>Developed automated tests with Selenium, TestNG, and Cucumber. Performed regression, cross-browser, and parallel testing. Created detailed Extent Reports and integrated Jenkins for CI/CD pipelines.</p>
+          <i class="fas fa-chevron-down dropdown-icon"></i>
+          <div class="timeline-details">
+            <ul>
+              <li>Validated front-end components using HTML, CSS, and JavaScript (DOM).</li>
+              <li>Mastered Core Java, Java 8, J2EE, JDBC to build robust automation frameworks.</li>
+              <li>Learned SQL and MySQL Database for backend validations.</li>
+              <li>Developed and executed automated tests using Selenium WebDriver, TestNG, Maven, and Cucumber.</li>
+              <li>Conducted functional, regression, smoke, cross-browser, and parallel testing to ensure high-quality releases.</li>
+              <li>Implemented Listeners and Extent Reports for detailed test execution reporting and tracking.</li>
+              <li>Managed code and builds via Git, GitHub, Jenkins, and CI/CD pipelines.</li>
+              <li>Optimized test coverage, debugging, and overall code efficiency for faster and reliable delivery.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item" onclick="toggleDetails(this)">
+          <h3>Tap Academy — Java Developer Intern</h3>
+          <p><small>Aug '24 — Jan '25 • Bengaluru, India</small></p>
+          <p>Worked on front-end and back-end development using Java, J2EE, JSP, and JDBC. Gained practical experience in Spring MVC and MySQL integration for real-world applications.</p>
+          <i class="fas fa-chevron-down dropdown-icon"></i>
+          <div class="timeline-details">
+            <ul>
+              <li>Learned frontend development using HTML, CSS, JavaScript (DOM), and JSP.</li>
+              <li>Developed Java-based applications using Core Java, Java 8 features, and Collections Framework.</li>
+              <li>Gained backend development skills using Core Java, J2EE, and JDBC for database connectivity.</li>
+              <li>Worked with MySQL and SQL queries for storing, retrieving, and managing relational data in web applications.</li>
+              <li>Learned and practiced Spring MVC framework for developing dynamic and organized web applications.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    function toggleDetails(element) {
+      // Toggle active class on the clicked item
+      element.classList.toggle('active');
+      
+      // Find the details div within the clicked item
+      const details = element.querySelector('.timeline-details');
+      details.classList.toggle('active');
+    }
+    </script>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="timeline">
+        <div class="certification-card">
+          <a href="https://www.hackerrank.com/certificates/iframe/803ca54e99c7" target="_blank">
+            <div class="certification-info">
+              <h3>HackerRank – Problem Solving</h3>
+              <p><small>Issued Jan '25</small></p>
+            </div>
+            <i class="fas fa-external-link-alt icon"></i>
+          </a>
+        </div>
+        <div class="certification-card">
+          <a href="https://www.hackerrank.com/certificates/iframe/1a969368c322" target="_blank">
+            <div class="certification-info">
+              <h3>HackerRank – Java</h3>
+              <p><small>Issued Jan '25</small></p>
+            </div>
+            <i class="fas fa-external-link-alt icon"></i>
+          </a>
+        </div>
+        <div class="certification-card">
+          <a href="https://www.hackerrank.com/certificates/iframe/803ca54e99c7" target="_blank">
+            <div class="certification-info">
+              <h3>HackerRank – SQL</h3>
+              <p><small>Issued Jan '25</small></p>
+            </div>
+            <i class="fas fa-external-link-alt icon"></i>
+          </a>
+        </div>
+        <div class="certification-card">
+          <a href="https://drive.google.com/file/d/1GGZizALTasoJ2MCzk_Yy2pUoUXC_DuLq/view" target="_blank">
+            <div class="certification-info">
+              <h3>Tap Academy – Full Stack Web Development</h3>
+              <p><small>Issued Jan '25</small></p>
+            </div>
+            <i class="fas fa-external-link-alt icon"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Imejob Automation Suite</h3>
+            <a href="https://github.com/Mohammed-SumairKhan/imejob_automation_suite" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <p><small>Sep '25 — Nov '25' • Manasio Private Limited, Bengaluru</small></p>
+          <div class="project-details">
+            <ul>
+              <li>Currently working on automation scripts using Java, Selenium WebDriver, and TestNG for a live project environment.</li>
+              <li>Implementing Page Object Model (POM) and DataProviders with JSON for scalable and maintainable tests.</li>
+              <li>Performing manual and automation testing to ensure end-to-end functionality and quality of live features.</li>
+              <li>Maintained Maven dependencies and version control via Git and GitHub.</li>
+              <li>Generating detailed Extent Reports and using Listeners to track test execution and results efficiently.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Sumanvi Project Management Tool</h3>
+            <a href="https://github.com/Mohammed-SumairKhan/Sumanvi-Project-Management-Tool" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <p><small>Jul '25 — Sep '25 • Manasio Private Limited, Bengaluru</small></p>
+          <div class="project-details">
+            <ul>
+              <li>Automated repetitive test scenarios using Java, Selenium WebDriver, and TestNG to streamline the testing process.</li>
+              <li>Implemented Page Object Model (POM) and DataProviders with JSON for scalable and maintainable test scripts.</li>
+              <li>Maintained Maven dependencies and version control via Git and GitHub.</li>
+              <li>Conducted manual testing, tracked defects, and maintained reports in Google Sheets for team visibility.</li>
+              <li>Generated Extent Reports with Listeners to provide detailed automation test results.</li>
+              <li>Ensured end-to-end testing coverage including functional, regression and smoke testing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Mini Leave Management System</h3>
+            <a href="https://github.com/MohammedSumairKhan/Mini-Leave-Management-System" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <p><small>Aug '25 - oct '25 • Personal Project</small></p>
+          <div class="project-details">
+            <ul>
+              <li>Developed a web-based leave management system using Java, JSP, Servlets, JDBC, and MySQL for efficient employee leave tracking.</li>
+              <li>Implemented secure login and role-based access for employees and admin (HR) with CRUD operations.</li>
+              <li>Designed and integrated a MySQL database to store employee details, leave requests, and reports.</li>
+              <li>Built dynamic leave reports showing total leaves taken, remaining leaves, and leave history for analytics.</li>
+              <li>Created HLD diagrams and project documentation to maintain clear system design and development workflow.</li>
+              <li>Enhanced project usability with screenshots, setup instructions, and README documentation for easy deployment.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Hospital Management System</h3>
+            <a href="https://github.com/MohammedSumairKhan/Hospital_Management_System-web-app" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <p><small>Dec '24 — Jan '25 • Personal Project</small></p>
+          <div class="project-details">
+            <ul>
+              <li>Designed and developed a hospital management project using HTML, CSS, JSP, Java, JDBC, and MySQL.</li>
+              <li>Designed the frontend using HTML and CSS with help from ChatGPT AI.</li>
+              <li>Connected the application to a MySQL database using JDBC to store and retrieve records.</li>
+              <li>Wrote backend logic using Java and J2EE to handle user requests and data processing.</li>
+              <li>Used Eclipse IDE for development and deployed the project on Apache Tomcat server for testing and execution.</li>
+              <li>Uploaded the project to GitHub to showcase it as part of my learning and development journey.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch;">
+        <div class="card" style="text-align:center;height:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;position:relative;">
+          <p style="font-size:1.1rem;font-weight:500;margin-bottom:1.5rem;">Interested in working together or discussing opportunities? Let's connect!</p>
+          <p style="font-size:1rem;margin-bottom:0.5rem;text-align:left;width:100%;max-width:320px;">Email: <a href="mailto:sumair.qaengineer@gmail.com" style="color:var(--accent)">sumair.qaengineer@gmail.com</a></p>
+          <p style="font-size:1rem;margin-bottom:0.5rem;text-align:left;width:100%;max-width:320px;">Phone: <a href="tel:+919916358557" style="color:var(--accent)">+91 99163 58557</a></p>
+          <p style="font-size:1rem;margin-bottom:2rem;text-align:left;width:100%;max-width:320px;">Location: <span style="color:var(--accent)">Bengaluru, Karnataka, India</span></p>
+          <div style="font-size:1.05rem;font-family:'Poppins',sans-serif;font-weight:600;color:#38bdf8;margin-bottom:1.2rem;">Open to freelance projects</div>
+          <div style="flex:1;"></div>
+          <div class="social-icons" style="margin-bottom:0;margin-top:auto;display:flex;justify-content:center;width:100%;gap:32px;">
+            <a href="https://www.linkedin.com/in/mohammed-sumair-khan/" target="_blank" title="LinkedIn" style="font-size:2.5rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Mohammed-SumairKhan" target="_blank" title="GitHub" style="font-size:2.5rem;"><i class="fab fa-github"></i></a>
+            <a href="mailto:sumair.qaengineer@gmail.com" title="Email" style="font-size:2.5rem;"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="card" style="text-align:center;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+          <h3 style="margin-bottom:1rem;font-family:'Poppins',sans-serif;font-size:2rem;font-weight:700;letter-spacing:1px;">Get in Touch</h3>
+          <form action="https://formspree.io/f/xwkzqgqg" method="POST" style="width:100%;max-width:400px;">
+            <label for="email" style="font-weight:500;text-align:left;display:block;margin-bottom:0.5rem;">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required style="width:100%;margin-bottom:1rem;padding:0.5rem;border-radius:8px;border:1px solid #ccc;">
+            <label for="message" style="font-weight:500;text-align:left;display:block;margin-bottom:0.5rem;">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your message" required style="width:100%;margin-bottom:1rem;padding:0.5rem;border-radius:8px;border:1px solid #ccc;"></textarea>
+            <button type="submit" style="background:#111;color:#fff;padding:0.85rem 1.7rem;border:none;border-radius:12px;font-weight:700;display:flex;align-items:center;gap:0.7rem;cursor:pointer;font-size:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,0.12);transition:background 0.3s;">
+              <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Mohammed Sumair Khan — Built with passion.
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
